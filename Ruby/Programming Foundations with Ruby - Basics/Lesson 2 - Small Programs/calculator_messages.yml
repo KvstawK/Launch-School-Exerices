@@ -1,0 +1,15 @@
+en:
+  invalid: "Invalid input. Please enter a valid number."
+  operation_invalid: "Invalid operation. Please enter 'add', 'subtract', 'multiply', or 'divide' only!"
+  number: 'Write a number: '
+  second_number: 'Write a second number: '
+  operation: "What type of operation do you want to perform? Enter 'add', 'subtract', 'multiply', or 'divide'"
+gr:
+  invalid: "Μη έγκυρη είσοδος. Παρακαλώ εισάγετε ένα έγκυρο αριθμό."
+  operation_invalid: "Μη έγκυρη λειτουργία. Παρακαλώ εισάγετε μόνο 'πρόσθεση', 'αφαίρεση', 'πολλαπλασιασμό' ή 'διαίρεση'."
+  operation_type: "Ποιον τύπο λειτουργίας θέλετε να πραγματοποιήσετε; Εισάγετε 'πρόσθεση', 'αφαίρεση', 'πολλαπλασιασμό' ή 'διαίρεση'."
+  number: 'Εισάγετε έναν αριθμό: '
+  second_number: 'Εισάγετε έναν δεύτερο αριθμό: '
+  operation: "Ποιον τύπο λειτουργίας θέλετε να πραγματοποιήσετε; Εισάγετε 'πρόσθεση', 'αφαίρεση', 'πολλαπλασιασμό' ή 'διαίρεση'."
+
+

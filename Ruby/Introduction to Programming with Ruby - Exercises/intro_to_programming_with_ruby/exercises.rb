@@ -122,3 +122,9 @@ contacts.each_with_index do |(name, hash), idx|
 end
 
 p contacts
+
+def next_edge(side1, side2)
+	puts (side1 + side2) - 1
+end
+
+next_edge(8,10)
