@@ -9,7 +9,8 @@ def messages(message, lang='en')
 end
 
 def get_input(prompt, convert_to_number: false)
-  puts "=> #{prompt}"
+  message = messages(prompt, LANGUAGE)
+  puts "=> #{message}"
   input = gets.chomp
 
   loop do
@@ -37,16 +38,16 @@ def calculate(number_one, number_two, operation)
   else
     loop do
       puts(messages('operation_invalid', 'en'))
-      operation = get_input(messages('operation', 'en'))
+      operation = get_input('operation')
       break if %w[add subtract multiply divide].include?(operation.downcase)
     end
     calculate(number_one, number_two, operation)
   end
 end
 
-number_one = get_input(messages('number', 'en') , convert_to_number: true)
-number_two = get_input(messages('second_number', 'en'), convert_to_number: true)
-operation = get_input(messages('operation', 'en'))
+number_one = get_input('number' , convert_to_number: true)
+number_two = get_input('second_number', convert_to_number: true)
+operation = get_input('operation')
 
 calculate(number_one, number_two, operation)
 
