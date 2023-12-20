@@ -18,6 +18,9 @@ def calculate(loan_amount, loan_arp, loan_duration)
   annual_interest_rate = loan_arp / 100.0
   monthly_interest_rate = annual_interest_rate / 12.0
   monthly_payment = loan_amount * (monthly_interest_rate / (1 - (1 + monthly_interest_rate) ** (-loan_duration)))
+
+  rounded_monthly_payment = monthly_payment.round(3)
+  rounded_monthly_payment
 end
 
 loan_amount = user_input("Please enter the desired loan amount. Use a full stop '.' to represent the decimal point and format the number, for example, '2.500' or '4.560' for hundreds and tens: ")
