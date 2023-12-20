@@ -33,7 +33,7 @@ loop do
   computer_choice = VALID_INPUT.sample
   display_winner(user_choice, computer_choice)
 
-  prompt("Do you want to play again? Enter 'N' to exit or press 'enter' to continue.")
+  prompt("Do you want to play again? Enter 'N' to exit or press 'enter'.")
   user_replay = gets.chomp
   break if user_replay.downcase.include?('n')
 end
