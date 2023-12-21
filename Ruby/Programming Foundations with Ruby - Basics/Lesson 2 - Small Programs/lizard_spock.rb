@@ -24,11 +24,12 @@ def display_results(user_input, computer_choice, user_wins, computer_wins)
   [user_wins, computer_wins]
 end
 
-user_wins = 0
-computer_wins = 0
-
 loop do
+  user_wins = 0
+  computer_wins = 0
+
   prompt("Welcome to 'Rock, Paper, Scissors, Lizard, Spock' game!")
+
   loop do
     valid_chars = VALID_INPUT.map { |input| input.scan(/\((\w+)\)/) }.flatten
 
@@ -51,7 +52,15 @@ loop do
     break if we_have_winner
   end
 
-  prompt("Press 'enter' if you would like to play again, else press 'esc' to quit!")
-  input = gets.chomp.downcase
-  break if input == 'esc'
+  loop do
+    prompt("Write 'play' and hit 'enter' if you would like to play again, else write 'exit' and press 'enter' to quit!")
+    input = gets.chomp.downcase
+    if input == 'exit'
+      exit
+    elsif input == 'play'
+      break
+    else
+      prompt("No other characters, words, or keys are allowed!")
+    end
+  end  
 end
