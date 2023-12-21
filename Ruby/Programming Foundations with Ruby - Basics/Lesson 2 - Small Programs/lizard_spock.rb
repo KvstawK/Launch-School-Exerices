@@ -4,8 +4,6 @@ def prompt(message)
   puts "=> #{message}"
 end
 
-prompt("Welcome to 'Rock, Paper, Scissors, Lizard, Spock' game!")
-
 def display_results(user_input, computer_choice, user_wins, computer_wins)
   user_choice = VALID_INPUT.find { |input| input.start_with?("(#{user_input})") }
   computer_choice_description = VALID_INPUT.find { |input| input.start_with?("(#{computer_choice})") }
@@ -30,6 +28,7 @@ user_wins = 0
 computer_wins = 0
 
 loop do
+  prompt("Welcome to 'Rock, Paper, Scissors, Lizard, Spock' game!")
   loop do
     valid_chars = VALID_INPUT.map { |input| input.scan(/\((\w+)\)/) }.flatten
 
@@ -39,15 +38,20 @@ loop do
     if valid_chars.include?(user_input)
       computer_choice = valid_chars.sample
       user_wins, computer_wins = display_results(user_input, computer_choice, user_wins, computer_wins)
+      we_have_winner = user_wins == 3 || computer_wins == 3
 
-      if user_wins == 3 || computer_wins == 3
+      if we_have_winner
         prompt("#{user_wins == 3 ? 'User' : 'Computer'} is the winner!")
-        exit
+        break
       end
-
-      break
     else
       prompt("You didn't enter one of the valid characters!")
     end
+
+    break if we_have_winner
   end
+
+  prompt("Press 'enter' if you would like to play again, else press 'esc' to quit!")
+  input = gets.chomp.downcase
+  break if input == 'esc'
 end
